@@ -1,0 +1,8 @@
+SECRET_KEY=cbcEzRrijIm300XUdhOrSQ
+DEBUG=True
+
+DB_NAME=postgres
+DB_USER=postgres
+DB_PWD=postgres
+DB_HOST=db
+DB_PORT=5432
