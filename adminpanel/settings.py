@@ -25,6 +25,7 @@ INSTALLED_APPS = [
     "users",
     "cart",
     "broadcast",
+    "chats",
 ]
 
 MIDDLEWARE = [
