@@ -5,7 +5,10 @@ from catalog.models import Product
 
 class Cart(models.Model):
     user = models.OneToOneField(
-        TelegramUser, on_delete=models.CASCADE, related_name="cart"
+        TelegramUser,
+        on_delete=models.CASCADE,
+        related_name="cart",
+        verbose_name="Пользователь",
     )
 
     class Meta:
@@ -17,9 +20,16 @@ class Cart(models.Model):
 
 
 class CartItem(models.Model):
-    cart = models.ForeignKey(Cart, on_delete=models.CASCADE, related_name="items")
-    product = models.ForeignKey(Product, on_delete=models.CASCADE)
-    quantity = models.PositiveIntegerField(default=1)
+    cart = models.ForeignKey(
+        Cart, on_delete=models.CASCADE, related_name="items", verbose_name="Корзина"
+    )
+    product = models.ForeignKey(
+        Product,
+        on_delete=models.CASCADE,
+        related_name="cart_items",
+        verbose_name="Товар",
+    )
+    quantity = models.PositiveIntegerField(default=1, verbose_name="Количество")
 
     class Meta:
         unique_together = ("cart", "product")
