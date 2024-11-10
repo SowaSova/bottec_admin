@@ -22,7 +22,10 @@ class Migration(migrations.Migration):
                         verbose_name="ID",
                     ),
                 ),
-                ("message_text", models.TextField(verbose_name="Текст сообщения")),
+                (
+                    "message_text",
+                    models.TextField(verbose_name="Текст сообщения"),
+                ),
                 ("created_at", models.DateTimeField(auto_now_add=True)),
                 (
                     "scheduled_time",
@@ -32,7 +35,9 @@ class Migration(migrations.Migration):
                 ),
                 (
                     "is_sent",
-                    models.BooleanField(default=False, verbose_name="Отправлено"),
+                    models.BooleanField(
+                        default=False, verbose_name="Отправлено"
+                    ),
                 ),
             ],
             options={

@@ -1,6 +1,7 @@
 from django.db import models
-from users.models import TelegramUser
+
 from catalog.models import Product
+from users.models import TelegramUser
 
 
 class Cart(models.Model):
@@ -21,7 +22,10 @@ class Cart(models.Model):
 
 class CartItem(models.Model):
     cart = models.ForeignKey(
-        Cart, on_delete=models.CASCADE, related_name="items", verbose_name="Корзина"
+        Cart,
+        on_delete=models.CASCADE,
+        related_name="items",
+        verbose_name="Корзина",
     )
     product = models.ForeignKey(
         Product,
@@ -37,6 +41,4 @@ class CartItem(models.Model):
         verbose_name_plural = "Товары в корзине"
 
     def __str__(self):
-        return (
-            f"{self.product} в корзине {self.cart.user} (количество: {self.quantity})"
-        )
+        return f"{self.product} в корзине {self.cart.user} (количество: {self.quantity})"

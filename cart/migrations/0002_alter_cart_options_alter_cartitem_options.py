@@ -12,7 +12,10 @@ class Migration(migrations.Migration):
     operations = [
         migrations.AlterModelOptions(
             name="cart",
-            options={"verbose_name": "Корзина", "verbose_name_plural": "Корзины"},
+            options={
+                "verbose_name": "Корзина",
+                "verbose_name_plural": "Корзины",
+            },
         ),
         migrations.AlterModelOptions(
             name="cartitem",

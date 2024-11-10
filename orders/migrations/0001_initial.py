@@ -71,7 +71,8 @@ class Migration(migrations.Migration):
                 (
                     "order",
                     models.ForeignKey(
-                        on_delete=django.db.models.deletion.CASCADE, to="orders.order"
+                        on_delete=django.db.models.deletion.CASCADE,
+                        to="orders.order",
                     ),
                 ),
                 (

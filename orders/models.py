@@ -1,4 +1,5 @@
 from django.db import models
+
 from catalog.models import Product
 from users.models import TelegramUser
 

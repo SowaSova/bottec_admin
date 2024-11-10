@@ -46,6 +46,8 @@ class Migration(migrations.Migration):
         migrations.AlterField(
             model_name="cartitem",
             name="quantity",
-            field=models.PositiveIntegerField(default=1, verbose_name="Количество"),
+            field=models.PositiveIntegerField(
+                default=1, verbose_name="Количество"
+            ),
         ),
     ]

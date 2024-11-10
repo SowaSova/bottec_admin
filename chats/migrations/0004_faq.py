@@ -6,7 +6,10 @@ from django.db import migrations, models
 class Migration(migrations.Migration):
 
     dependencies = [
-        ("chats", "0003_remove_requiredchat_url_alter_requiredchat_chat_id_and_more"),
+        (
+            "chats",
+            "0003_remove_requiredchat_url_alter_requiredchat_chat_id_and_more",
+        ),
     ]
 
     operations = [
@@ -22,7 +25,10 @@ class Migration(migrations.Migration):
                         verbose_name="ID",
                     ),
                 ),
-                ("question", models.CharField(max_length=255, verbose_name="Вопрос")),
+                (
+                    "question",
+                    models.CharField(max_length=255, verbose_name="Вопрос"),
+                ),
                 ("answer", models.TextField(verbose_name="Ответ")),
             ],
             options={

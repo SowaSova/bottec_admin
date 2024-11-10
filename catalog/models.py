@@ -1,11 +1,14 @@
-from django.db import models
 from django.core.validators import MinValueValidator
+from django.db import models
 from storages.backends.s3boto3 import S3Boto3Storage
+
 from utils.image_path import product_image_upload_to
 
 
 class Category(models.Model):
-    title = models.CharField(max_length=200, db_index=True, verbose_name="Название")
+    title = models.CharField(
+        max_length=200, db_index=True, verbose_name="Название"
+    )
     slug = models.SlugField(max_length=200, verbose_name="URL")
     parent = models.ForeignKey(
         "self",
@@ -27,7 +30,9 @@ class Category(models.Model):
 
 
 class Product(models.Model):
-    title = models.CharField(max_length=200, db_index=True, verbose_name="Название")
+    title = models.CharField(
+        max_length=200, db_index=True, verbose_name="Название"
+    )
     slug = models.SlugField(max_length=200, unique=True, verbose_name="URL")
     image = models.ImageField(
         upload_to=product_image_upload_to,
@@ -51,8 +56,12 @@ class Product(models.Model):
     )
 
     is_available = models.BooleanField(default=False, verbose_name="Доступен")
-    created_at = models.DateTimeField(auto_now_add=True, verbose_name="Дата создания")
-    updated_at = models.DateTimeField(auto_now=True, verbose_name="Дата обновления")
+    created_at = models.DateTimeField(
+        auto_now_add=True, verbose_name="Дата создания"
+    )
+    updated_at = models.DateTimeField(
+        auto_now=True, verbose_name="Дата обновления"
+    )
 
     class Meta:
         ordering = ("title",)

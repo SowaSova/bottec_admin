@@ -7,7 +7,9 @@ class RequiredChat(models.Model):
         ("channel", "Канал"),
     ]
 
-    chat_id = models.CharField(max_length=255, unique=True, verbose_name="ID чата")
+    chat_id = models.CharField(
+        max_length=255, unique=True, verbose_name="ID чата"
+    )
     title = models.CharField(max_length=255, verbose_name="Название чата")
     username = models.CharField(
         max_length=255, unique=True, verbose_name="Никнейм чата"

@@ -3,7 +3,9 @@ from django.db import models
 
 class BroadcastMessage(models.Model):
     message_text = models.TextField(verbose_name="Текст сообщения")
-    created_at = models.DateTimeField(auto_now_add=True, verbose_name="Дата создания")
+    created_at = models.DateTimeField(
+        auto_now_add=True, verbose_name="Дата создания"
+    )
     scheduled_time = models.DateTimeField(
         null=True, blank=True, verbose_name="Время отправки"
     )

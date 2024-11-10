@@ -17,12 +17,16 @@ class Migration(migrations.Migration):
         migrations.AlterField(
             model_name="requiredchat",
             name="chat_id",
-            field=models.CharField(max_length=255, unique=True, verbose_name="ID чата"),
+            field=models.CharField(
+                max_length=255, unique=True, verbose_name="ID чата"
+            ),
         ),
         migrations.AlterField(
             model_name="requiredchat",
             name="title",
-            field=models.CharField(max_length=255, verbose_name="Название чата"),
+            field=models.CharField(
+                max_length=255, verbose_name="Название чата"
+            ),
         ),
         migrations.AlterField(
             model_name="requiredchat",

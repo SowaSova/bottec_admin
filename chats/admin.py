@@ -1,5 +1,6 @@
 from django.contrib import admin
-from .models import RequiredChat, FAQ
+
+from .models import FAQ, RequiredChat
 
 
 @admin.register(RequiredChat)
